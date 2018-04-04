@@ -1,0 +1,12 @@
+<!--
+ This view should contain a form to update
+ a specific blog post and POSTs to a controller
+ action, patch '/posts/:id'
+-->
+<h1><%= "Post To Edit: ##{@id}, '#{@post.name}'" %></h1>
+<form method="post" action="/posts/<%= @id %>"> <!-- maybe here erro -->
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <p>Post Title: <input type="text" name="name" value="<%="#{@post.name}"%>"></p>
+  <p>Post Content: <input type="text" name="content" value="<%="#{@post.content}"%>"></p>
+  <input id="submit" type="submit" value="Edit This Post">
+</form>

@@ -1,0 +1,8 @@
+<!-- show a single post using erb -->
+<h1><%= "Post ##{@id}: '#{@post.name}'" %></h1>
+<h3><%= @post.content %></h3>
+<p><a href=<%="/posts/#{@post.id}/edit"%>>Edit this post</a></p>
+<form method="post" action="/posts/<%= @id %>/delete">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete">
+</form>
