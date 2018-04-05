@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>Blogger</title>
+</head>
+ <body>
+   <!-- <form method="GET" action="/posts/new">
+     <input type="submit" name = "Submit" value = "Click to Add a Blog Post">
+   </form> -->
+   <%  @posts.each do |po| %>
+   <%= po.name %>
+   <%= po.content %>
+   <%= po.id %>
+   </br>
+   <%  end %>
+ </body>
+</html>

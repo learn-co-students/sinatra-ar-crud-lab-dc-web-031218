@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>Blogger Post</title>
+</head>
+ <body>
+   <!-- <form method="GET" action="/posts/new">
+     <input type="submit" name = "Submit" value = "Click to Add a Blog Post">
+   </form> -->
+   Post's Name: <%=  @post.name%>
+   Post's Content: <%=  @post.content%>
+
+   <form action="/posts/<%= @post.id %>/delete" method="post">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    <input type="submit" value="delete">
+   </form>
+ </body>
+</html>
