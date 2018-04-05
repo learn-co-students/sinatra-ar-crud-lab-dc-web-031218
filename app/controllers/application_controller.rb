@@ -12,34 +12,34 @@ class ApplicationController < Sinatra::Base
     erb :new
   end
 
-  get '/posts/new' do
+  get '/posts/new' do #load new post form
     erb :new
   end
 
-  post '/posts' do
+  post '/posts' do #creates new post
     Post.create(params)
-    @posts = Post.all
+    #@posts = Post.all
     erb :index
   end
   
   #READ
-  get '/posts' do 
+  get '/posts' do   #index
     @posts = Post.all
     erb :index
   end
 
-  get '/posts/:id' do 
+  get '/posts/:id' do    #show
     @post = Post.find(params[:id])
     erb :show
   end
 
   #UPDATE
-  get '/posts/:id/edit' do
+  get '/posts/:id/edit' do  #load edit form
      @post = Post.find(params[:id])
     erb :edit
   end  
 
-  patch '/posts/:id' do
+  patch '/posts/:id' do  #edit action
         @post = Post.find(params[:id])
         @post.update(name: params[:name], content: params[:content])
         erb :show
@@ -47,9 +47,9 @@ class ApplicationController < Sinatra::Base
 
   #DELETE
 
-  delete '/posts/:id/delete' do
+  delete '/posts/:id/delete' do  #delete action
       @post = Post.find(params[:id])
-      @post.destroy
+      @post.delete
       erb :delete
     end
 
