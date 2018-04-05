@@ -1,0 +1,11 @@
+<% if @posts != nil && !@posts.empty? %>
+	<% @posts.each do |post| %>
+	<p>Name: <%= post.name %></p>
+	<p>Content: <%= post.content %></p>
+	<a href="/posts/<%= post.id %>/edit">Edit This Post</a>
+	<a href="/posts/new">Create New Post</a>
+	<% end %>
+<% else %>
+	<p>There are no posts yet on your blog.</p>
+	<a href="/posts/new">Create New Post</a>
+<%end%>
